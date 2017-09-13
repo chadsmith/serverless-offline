@@ -845,7 +845,7 @@ class Offline {
   end() {
     this.serverlessLog('Halting offline server');
     this.server.stop({ timeout: 5000 })
-    .then(() => process.exit(this.exitCode));
+    .then(() => setTimeout(() => process.exit(this.exitCode), 0));
   }
 
   // Bad news
